@@ -197,46 +197,6 @@ ax['H'].legend(labels=["Unthesholded" , "T$_{prop.}$", "T$_{abs.}$"])
 
 plt.show()
 
-# #_________________ Distribution-guided network  _________________
-
-
-# corr_matrix = np.corrcoef(all_pcp_nr2.loc[0]['ts'].T)
-# corr_matrix2 = np.corrcoef(all_pcp_nr2.loc[2]['ts'].T)
-
-# std1 = np.std(corr_matrix)
-# std2 = np.std(corr_matrix2)
-
-# # Set the values below the threshold to NaN
-# corr_matrix[-0.2 < corr_matrix] = np.nan
-# # corr_matrix[1 == corr_matrix] = np.nan
-
-# # Plot the modified correlation matrix
-# cmap = plt.get_cmap('coolwarm')  # The colormap (red/blue)
-# pc = ax['G'].pcolormesh(corr_matrix,
-#                     norm=colors.CenteredNorm(),  # Center the colorbar around 0.
-#                     cmap=cmap)  # Colormap previously selected.
-
-
-# mini = pd.DataFrame(corr_matrix.flatten())
-# mini.plot(kind = "kde", ax = ax['I'], legend=False, color = "navy")
-
-
-
-# # Transform it in a links data frame (3 columns only):
-# links = pd.DataFrame(corr_matrix).stack().reset_index()
-# links.columns = ['var1', 'var2', 'value']
- 
-# # Build your graph
-# G=nx.from_pandas_edgelist(links, 'var1', 'var2')
- 
-# # Plot the network:
-# nx.draw_networkx(G, ax = ax['C'], pos = nx.random_layout(G, seed = 1), 
-#                  with_labels=False, node_color='black', 
-#                  node_size=15, edge_color='navy', 
-#                  linewidths=0.01, font_size=15, width = 0.3)
-# plt.show()
-
-
 
 
 
